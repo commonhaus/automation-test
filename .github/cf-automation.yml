@@ -16,6 +16,9 @@ notice:
         label: [notice]
         then: [dispatch]
   pull_request:
+    action: 
+      - "!labeled"
+      - "!unlabeled"
     rules:
       - # If a pull request is created that touches bylaws or policies
         # apply the notice label
