@@ -6,15 +6,6 @@ notice:
         category: [Announcements, Reviews]
         action: [created, category_changed]
         then: [label_notice]
-      - # If an event happens for a discussion in Announcements or Reviews
-        # send an email to the announcement list 
-        # dispatch a follow-on action to update the website (RSS, etc)
-        category: [Announcements, Reviews]
-        then: [dispatch, email]
-      - # If a discussion with a Notice label is updated in any way,
-        # dispatch a follow-on action to update the website (RSS, etc)
-        label: [notice]
-        then: [dispatch]
   pull_request:
     rules:
       - # If a pull request is created that touches bylaws or policies
@@ -27,16 +18,6 @@ notice:
         path:
           - bylaws/*
           - policies/*
-        then: [label_notice, dispatch, email]
-      - # If a pull request has a notice label,
-        # dispatch a follow-on action to update the website (RSS, etc)
-        label: [notice]
-        then: [dispatch]
+        then: [label_notice]
   actions:
     label_notice: [notice]
-    email: 
-      address: test@commonhaus.org
-      template: something.qute
-    dispatch: 
-      repo: commonhaus/commonhaus.github.io
-      name: gh-notice.yml
