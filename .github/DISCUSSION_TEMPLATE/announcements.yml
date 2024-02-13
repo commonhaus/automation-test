@@ -3,8 +3,9 @@ body:
   - type: markdown
     attributes:
       value: |
-        Announcements will be forwarded to the website and to the announcements mailing list.
-        - Title: short and sweet. If action is required say so, and say when
+        > [!NOTE]
+        > Announcements will be forwarded to the website and to the announcements mailing list.
+        > - Title: short and sweet. If action is required say so, and say when
   - type: textarea
     attributes:
       label: Announcement
