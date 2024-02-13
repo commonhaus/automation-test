@@ -3,7 +3,9 @@ notice:
     rules:
       - # If a discussion is created in the Announcements or Reviews 
         # category, apply the notice label
-        category: [Announcements, Reviews]
+        category: 
+          - Announcements
+          - Consensus Building
         action: [created, category_changed]
         then: [label_notice]
       - # If a discussion that already has a notice label is updated,
