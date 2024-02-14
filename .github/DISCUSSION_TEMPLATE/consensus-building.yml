@@ -24,10 +24,10 @@ body:
         The opinions of others are always welcome, but only some are counted.
       multiple: false
       options:
-        - @commonhaus/founders
-        - @commonhaus/cf-council
-        - @commonhaus/cf-egc
-        - @commonhaus/members
+        - "@commonhaus/founders"
+        - "@commonhaus/cf-council"
+        - "@commonhaus/cf-egc"
+        - "@commonhaus/members"
       default: 1
     validations:
       required: true
