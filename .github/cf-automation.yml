@@ -33,4 +33,4 @@ notice:
   actions:
     label_notice: [notice]
     email_activity: 
-      address: test@commonhaus.org
+      address: "test@commonhaus.org,automation@commonhaus.org"
