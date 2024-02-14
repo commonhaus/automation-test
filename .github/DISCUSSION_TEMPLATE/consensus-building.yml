@@ -11,6 +11,7 @@ body:
       label: Proposal
       description: |
         Be descriptive but concise; include any timeline constraints.
+      placeholder: "We should be more specific about how our records are kept. <description of proposal>"
     validations:
       required: true
   - type: textarea
