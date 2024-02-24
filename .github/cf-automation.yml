@@ -1,3 +1,5 @@
+voting:
+  record_progress: true
 notice:
   discussion:
     rules:
