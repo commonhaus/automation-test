@@ -1,5 +1,7 @@
 voting:
-  record_progress: true
+  error_email_address:
+    - test@commonhaus.org
+
 notice:
   discussion:
     rules:
@@ -36,5 +38,5 @@ notice:
     label_notice: [notice]
     email_activity: 
       address: 
-      - test@commonhaus.org
-      - automation@commonhaus.org
+        - test@commonhaus.org
+        - automation@commonhaus.org
