@@ -1,0 +1,22 @@
+name: Push Voting activity to commonhaus.github.io
+
+on:
+  discussion_comment:
+  issue_comment:
+
+permissions: {}
+
+jobs:
+  update-vote:
+    runs-on: ubuntu-latest
+    if: github.repository == 'commonhaus/automation-test' && github.event.sender.login == 'commonhaus-test-bot[bot]'
+    permissions:
+      actions: read
+    steps:
+    - name: Bump voting results
+      if: github.event.comment
+      env:
+        GH_TOKEN: ${{ secrets.ACTIONS_PUBLISH_PAT }}
+        COMMENT_ID: ${{ github.event.comment.node_id }}
+      run: |
+        echo '{"comment_id": "${COMMENT_ID}"}' | gh workflow run -R commonhaus/commonhaus.github.io push-votes.yml --json
