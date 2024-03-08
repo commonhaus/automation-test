@@ -14,7 +14,7 @@ permissions: {}
 jobs:
   update-vote:
     runs-on: ubuntu-latest
-    if: github.repository == 'commonhaus/automation-test' && github.event.sender.login == 'commonhaus-test-bot[bot]'
+    if: github.repository == 'commonhaus/automation-test'
     permissions:
       actions: read
     steps:
@@ -24,8 +24,12 @@ jobs:
         GH_TOKEN: ${{ secrets.ACTIONS_PUBLISH_PAT }}
         COMMENT_ID: ${{ github.event.comment.node_id }}
         INPUT: ${{ github.event.inputs.message }}
+        SENDER: ${{ github.event.sender.login }}
       run: |
         if [[ -z "$COMMENT_ID" ]]; then
           COMMENT_ID=$INPUT
+        else if [[ "$SENDER" != "commonhaus-test-bot[bot]" ]]; then
+          echo "Comment skipped. Not bot sender"
+          exit 0
         fi
         echo '{"comment_id": "${COMMENT_ID}"}' | gh workflow run -R commonhaus/commonhaus.github.io push-votes.yml --json
