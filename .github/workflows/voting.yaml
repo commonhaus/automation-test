@@ -14,12 +14,10 @@ permissions: {}
 jobs:
   update-vote:
     runs-on: ubuntu-latest
-    if: github.repository == 'commonhaus/automation-test'
     permissions:
       actions: read
     steps:
     - name: Bump voting results
-      if: github.event.comment
       env:
         GH_TOKEN: ${{ secrets.ACTIONS_PUBLISH_PAT }}
         COMMENT_ID: ${{ github.event.comment.node_id }}
