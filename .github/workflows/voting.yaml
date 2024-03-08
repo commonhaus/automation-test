@@ -3,6 +3,11 @@ name: Push Voting activity to commonhaus.github.io
 on:
   discussion_comment:
   issue_comment:
+  workflow_dispatch:
+    inputs:
+      comment_id:
+        type: string
+        required: true
 
 permissions: {}
 
@@ -18,5 +23,9 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.ACTIONS_PUBLISH_PAT }}
         COMMENT_ID: ${{ github.event.comment.node_id }}
+        INPUT: ${{ github.event.inputs.message }}
       run: |
+        if [[ -z "$COMMENT_ID" ]]; then
+          COMMENT_ID=$INPUT
+        fi
         echo '{"comment_id": "${COMMENT_ID}"}' | gh workflow run -R commonhaus/commonhaus.github.io push-votes.yml --json
