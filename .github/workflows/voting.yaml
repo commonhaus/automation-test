@@ -21,7 +21,7 @@ jobs:
       env:
         GH_TOKEN: ${{ secrets.ACTIONS_PUBLISH_PAT }}
         COMMENT_ID: ${{ github.event.comment.node_id }}
-        INPUT: ${{ github.event.inputs.message }}
+        INPUT: ${{ github.event.inputs.comment_id }}
         SENDER: ${{ github.event.sender.login }}
       run: |
         if [[ -z "$COMMENT_ID" ]]; then
