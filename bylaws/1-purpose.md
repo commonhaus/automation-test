@@ -28,3 +28,5 @@ For the purposes of governance and legal compliance, the Commonhaus Foundation C
 The CF may have offices either within or outside the Central Florida area (or anywhere throughout the State of Florida), as the [CF Council][cfc] (CFC) may designate or as the affairs of the CF may require from time to time.
 
 [cfc]: ./3-cf-council.md
+
+test
