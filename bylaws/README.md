@@ -23,3 +23,5 @@ The [foundation][] repository is the authoritative source for Commonhaus Foundat
 The CF Council (CFC) is responsible for periodically reviewing and approving changes to Bylaws. The CFC will review bylaws at least annually to ensure ongoing compliance with applicable laws and regulations.
 
 Amendments or changes to Bylaws will follow the [amendment process](./8-amendments.md).
+
+This is just a test
