@@ -43,3 +43,8 @@ notice:
       address: 
         - test@commonhaus.org
         - automation@commonhaus.org
+
+sponsors:
+  sponsors_repo: commonhaus-test/sponsors-test
+  sponsorables:
+  - commonhaus
